@@ -64,8 +64,8 @@ public final class FactorialDouble {
         }
 
         // Copy available values.
-        for (int i = beginCopy; i < endCopy; i++) {
-            factorialsDouble[i] = cache[i];
+        if (endCopy - beginCopy >= 0) {
+            System.arraycopy(cache, beginCopy, factorialsDouble, beginCopy, endCopy - 2);
         }
 
         // Precompute.
